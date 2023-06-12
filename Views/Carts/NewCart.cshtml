@@ -1,0 +1,46 @@
+﻿@model Cart
+@{
+    ViewData["Title"] = "NewCart";
+
+}
+
+
+
+<h1>NewCart</h1>
+
+<div class="container">
+    <form method="post">
+        <div class="container ">
+            <div class="row">
+                <div class="col">
+                    Product:
+                </div>
+                <div class="col">
+                    
+                    <select class="form-control" asp-items="ViewBag.idProduct"></select>
+                </div>
+            </div>
+        </div>
+        <div class="container ">
+            <div class="row">
+                <div class="col">
+                    Utente:
+                </div>
+                <div class="col">
+
+                    <select class="form-control" asp-items="ViewBag.idUtente"></select>
+                </div>
+            </div>
+        </div>
+        <div class="container ">
+            <div class="row">
+
+                <div class="col">
+                    <input type="submit" value="AGGIUNGI" />
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+</div>

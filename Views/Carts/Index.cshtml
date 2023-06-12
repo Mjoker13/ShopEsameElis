@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ShopEsameElis.Models.Cart>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Add Product</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name product
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Name User
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdProductNavigation.Name)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdProductNavigation.Quantity)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdUtenteNavigation.Name)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdCart">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdCart">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
